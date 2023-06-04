@@ -13,4 +13,4 @@ COPY requirements.txt /caloriemanagement/
 RUN pip install -r requirements.txt
 
 COPY . /caloriemanagement/
-EXPOSE 6000
+EXPOSE 8000

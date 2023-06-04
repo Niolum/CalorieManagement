@@ -17,9 +17,9 @@ services:
       - .:/caloriemanagement
     command: >
       /bin/sh -c "python3 manage.py migrate --force-color -v 3
-      && python manage.py runserver 0.0.0.0:6000"
+      && python manage.py runserver 0.0.0.0:8000"
     ports:
-      - 6000:6000
+      - 8000:8000
     depends_on:
       - postgres
 
