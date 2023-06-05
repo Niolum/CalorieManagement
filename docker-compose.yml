@@ -1,0 +1,28 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres:14
+    env_file:
+      - ./.env
+    volumes:
+      - caloriedb:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+  web:
+    build: .
+    container_name: caloriemanagement
+    env_file:
+      - ./.env
+    volumes:
+      - .:/caloriemanagement
+    command: >
+      /bin/sh -c "python3 manage.py migrate --force-color -v 3
+      && python manage.py runserver 0.0.0.0:8000"
+    ports:
+      - 8000:8000
+    depends_on:
+      - postgres
+
+volumes:
+  caloriedb:
+    external: True
