@@ -17,6 +17,7 @@ services:
       - .:/caloriemanagement
     command: >
       /bin/sh -c "python3 manage.py migrate --force-color -v 3
+      && python manage.py scrapy
       && python manage.py runserver 0.0.0.0:8000"
     ports:
       - 8000:8000
