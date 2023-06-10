@@ -31,7 +31,7 @@ class Category(models.Model):
 
 class Product(models.Model):
     name = models.CharField(verbose_name='Название продукта', max_length=255)
-    photo = models.ImageField(verbose_name='Изображение продукта', upload_to=product_directory_path) 
+    photo = models.ImageField(verbose_name='Изображение продукта', upload_to=product_directory_path, max_length=255) 
     calorie = models.FloatField(verbose_name='Ккал')
     fat = models.FloatField(verbose_name='Жиры')
     protein = models.FloatField(verbose_name='Белки')

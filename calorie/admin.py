@@ -13,7 +13,15 @@ class CategoryAdmin(admin.ModelAdmin):
     def get_image(self, obj):
         return mark_safe(f'<img src={obj.photo.url} width="100" height="100"')
     
-    get_image.short_descripton = "Изображение"
+    get_image.short_descripton = 'Изображение'
 
 
-admin.site.register(Product)
+@admin.register(Product)
+class ProductAdmin(admin.ModelAdmin):
+    list_display = ('name', 'calorie', 'fat', 'protein', 'carbohydrate', 'slug', 'get_image')
+    readonly_fields = ('get_image',)
+
+    def get_image(self, obj):
+        return mark_safe(f'<img src={obj.photo.url} width="100" height="100"')
+
+    get_image.short_description = 'Изображение'

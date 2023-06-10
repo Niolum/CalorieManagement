@@ -10,14 +10,25 @@ services:
       - 5432:5432
   web:
     build: .
+    container_name: 'calorie_manage'
+    volumes:
+      - calorie_media:/caloriemanagement/media
+  web_parse:
+    extends:
+      service: web
+    container_name: 'parse'
+    command: /bin/sh -c "python manage.py scrapy"
+  web_run:
+    # build: .
+    extends:
+      service: web
     container_name: caloriemanagement
     env_file:
       - ./.env
-    volumes:
-      - .:/caloriemanagement
+    # volumes:
+    #   - .:/caloriemanagement
     command: >
       /bin/sh -c "python3 manage.py migrate --force-color -v 3
-      && python manage.py scrapy
       && python manage.py runserver 0.0.0.0:8000"
     ports:
       - 8000:8000
@@ -26,4 +37,6 @@ services:
 
 volumes:
   caloriedb:
+    external: True
+  calorie_media:
     external: True
