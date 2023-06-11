@@ -39,9 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
     'user.apps.UserConfig',
     'calorie.apps.CalorieConfig',
-    'cart.apps.CartConfig'
+    'cart.apps.CartConfig',
 ]
 
 MIDDLEWARE = [
