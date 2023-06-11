@@ -32,7 +32,7 @@ class CartProduct(models.Model):
 
     
 class Cart(models.Model):
-    owner = models.ForeignKey(Profile, verbose_name='Польщовател', on_delete=models.CASCADE)
+    owner = models.ForeignKey(Profile, verbose_name='Пользователь', on_delete=models.CASCADE)
     cart_products = models.ManyToManyField(
         CartProduct, blank=True, related_name='carts', verbose_name='Выбранные продукты'
     )
