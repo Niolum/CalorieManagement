@@ -13,11 +13,11 @@ services:
     container_name: 'calorie_manage'
     volumes:
       - calorie_media:/caloriemanagement/media
-  web_parse:
-    extends:
-      service: web
-    container_name: 'parse'
-    command: /bin/sh -c "python manage.py scrapy"
+  # web_parse:
+  #   extends:
+  #     service: web
+  #   container_name: 'parse'
+  #   command: /bin/sh -c "python manage.py scrapy"
   web_run:
     extends:
       service: web
