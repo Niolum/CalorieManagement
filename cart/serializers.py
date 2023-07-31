@@ -1,13 +1,13 @@
 from rest_framework import serializers
 
 from cart.models import CartProduct, Cart
-from calorie.serializers import ProductListSerializer
+from calorie.serializers import ProductDetailSerializer
 from user.serializers import ProfileSerializer
-
+from user.models import Profile, User
 
 
 class CartProductSerializer(serializers.ModelSerializer):
-    product = ProductListSerializer()
+    product = ProductDetailSerializer()
 
     class Meta:
         model = CartProduct
@@ -15,7 +15,6 @@ class CartProductSerializer(serializers.ModelSerializer):
 
 
 class CartSerializer(serializers.ModelSerializer):
-    owner = ProfileSerializer()
     cart_products = CartProductSerializer(many=True, read_only=True)
 
     class Meta:

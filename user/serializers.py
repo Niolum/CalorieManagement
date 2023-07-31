@@ -45,8 +45,12 @@ class UserLoginSerializer(serializers.Serializer):
 
 
 class ProfileSerializer(serializers.ModelSerializer):
-    user = UserSerializer(read_only=True)
+    user = serializers.SerializerMethodField()
 
     class Meta:
         model = Profile
-        fields = ['user']
+        fields = ['id', 'user']
+
+    @staticmethod
+    def get_user(obj):
+        return obj.user.username if not (obj.user.first_name and obj.user.last_name) else ' '.join([obj.user.first_name, obj.user.last_name])

@@ -32,10 +32,10 @@ class Category(models.Model):
 class Product(models.Model):
     name = models.CharField(verbose_name='Название продукта', max_length=255)
     photo = models.ImageField(verbose_name='Изображение продукта', upload_to=product_directory_path, max_length=255) 
-    calorie = models.FloatField(verbose_name='Ккал')
-    fat = models.FloatField(verbose_name='Жиры')
-    protein = models.FloatField(verbose_name='Белки')
-    carbohydrate = models.FloatField(verbose_name='Углеводы')
+    calorie = models.DecimalField(verbose_name='Ккал', decimal_places=2, max_digits=10)
+    fat = models.DecimalField(verbose_name='Жиры', decimal_places=2, max_digits=10)
+    protein = models.DecimalField(verbose_name='Белки', decimal_places=2, max_digits=10)
+    carbohydrate = models.DecimalField(verbose_name='Углеводы', decimal_places=2, max_digits=10)
     category = models.ForeignKey(Category, verbose_name='Категория', on_delete=models.CASCADE)
     slug = models.SlugField(max_length=160, unique=True)
 
