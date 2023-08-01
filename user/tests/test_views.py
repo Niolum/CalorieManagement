@@ -105,7 +105,6 @@ class TestProfileView:
         response = client.get(self.endpoint + 'profile/', headers={"Authorization": f"Bearer {access}"})
 
         assert response.status_code == status.HTTP_200_OK
-        print(response.data)
         assert response.data['user'] == f"{profile.user.first_name} {profile.user.last_name}"
 
     @pytest.mark.django_db
