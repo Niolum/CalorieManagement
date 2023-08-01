@@ -46,13 +46,9 @@ class UserLogoutAPIView(GenericAPIView):
 
     def post(self, request, *args, **kwargs):
         try:
-            print(request.data)
             refresh_token = request.data['refresh']
-            print(refresh_token)
             token = RefreshToken(refresh_token)
-            print(token)
             token.blacklist()
-            print('last')
             return Response(status=status.HTTP_205_RESET_CONTENT)
         except Exception as e:
             return Response(status=status.HTTP_400_BAD_REQUEST)
