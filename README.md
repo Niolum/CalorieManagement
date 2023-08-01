@@ -96,3 +96,12 @@ To start the project, use the following command:
 ```
 docker-compose up -d
 ```
+
+## Run test
+
+
+To run all the tests of a project, simply run the pytest command:
+
+```
+pytest
+```
