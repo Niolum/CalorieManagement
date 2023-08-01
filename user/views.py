@@ -20,7 +20,7 @@ class RegistryUserView(CreateAPIView):
         if serializer.is_valid():
             serializer.save()
             data['response'] = True
-            return Response(data, status=status.HTTP_200_OK)
+            return Response(data, status=status.HTTP_201_CREATED)
         else:
             data = serializer.errors
             return Response(data)
