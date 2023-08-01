@@ -7,7 +7,7 @@
 
 ## About Project
 
-CalorieManagement is an API for counting calories. It implements site parsing (https://supercalorizator.ru/). Categories, products and their color content, proteins, fats and carbohydrates, as well as pictures of categories and products are parsed from this site. Implemented the ability to register a user, create a cart for the user (in which products are added to count calories), as well as receive products and categories.
+CalorieManagement is an API for counting calories. It implements site parsing (https://supercalorizator.ru/). Categories, products and their calories, proteins, fats and carbohydrates, as well as pictures of categories and products are parsed from this site. Implemented the ability to register a user, create a cart for the user (in which products are added to count calories), as well as receive products and categories.
 
 
 ## Features
