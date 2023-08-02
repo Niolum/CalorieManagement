@@ -3,6 +3,8 @@
 ![Static Badge](https://img.shields.io/badge/python-3.11-blue?logo=python&link=https%3A%2F%2Fwww.python.org%2F)
 ![Static Badge](https://img.shields.io/badge/django-4%2C2-%23092E20?logo=django&link=https%3A%2F%2Fwww.djangoproject.com%2F)
 ![Static Badge](https://img.shields.io/badge/DRF-3%2C14-%23ED1C24?link=https%3A%2F%2Fwww.django-rest-framework.org%2F)
+![Coverage Status](https://img.shields.io/badge/coverage-97%25-%23f5d442)
+
 
 
 ## About Project
